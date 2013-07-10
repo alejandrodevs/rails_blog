@@ -1,0 +1,173 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-10 15:55:24 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails_blog" for 127.0.0.1 at 2013-07-10 15:55:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/rails_blog"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p195/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p195/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/alejandro/.rvm/rubies/ruby-2.0.0-p195/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.0ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (19.0ms)
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRailsBlogPosts (20130710205854)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130710205854"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-10 16:02:16 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.0.0-p195@rails_blog/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails_blog/posts" for 127.0.0.1 at 2013-07-10 16:02:29 -0500
+Processing by RailsBlog::PostsController#index as HTML
+  [1m[36mRailsBlog::Post Load (0.1ms)[0m  [1mSELECT "rails_blog_posts".* FROM "rails_blog_posts"[0m
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/index.html.erb within layouts/rails_blog/application (2.7ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/rails_blog/application.css?body=1" for 127.0.0.1 at 2013-07-10 16:02:29 -0500
+
+
+Started GET "/assets/rails_blog/application.js?body=1" for 127.0.0.1 at 2013-07-10 16:02:29 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:02:29 -0500
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:02:29 -0500
+
+
+Started GET "/rails_blog/posts/new" for 127.0.0.1 at 2013-07-10 16:03:03 -0500
+Processing by RailsBlog::PostsController#new as HTML
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/_form.html.erb (56.4ms)
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/new.html.erb within layouts/rails_blog/application (59.6ms)
+Completed 200 OK in 63ms (Views: 62.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:04 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:04 -0500
+
+
+Started GET "/rails_blog/posts" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+Processing by RailsBlog::PostsController#index as HTML
+  [1m[35mRailsBlog::Post Load (0.1ms)[0m  SELECT "rails_blog_posts".* FROM "rails_blog_posts"
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/index.html.erb within layouts/rails_blog/application (0.8ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+
+
+Started GET "/rails_blog/posts/new" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+Processing by RailsBlog::PostsController#new as HTML
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/_form.html.erb (2.2ms)
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/new.html.erb within layouts/rails_blog/application (3.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:05 -0500
+
+
+Started GET "/rails_blog/posts" for 127.0.0.1 at 2013-07-10 16:03:06 -0500
+Processing by RailsBlog::PostsController#index as HTML
+  [1m[36mRailsBlog::Post Load (0.2ms)[0m  [1mSELECT "rails_blog_posts".* FROM "rails_blog_posts"[0m
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/index.html.erb within layouts/rails_blog/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:06 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:06 -0500
+
+
+Started GET "/rails_blog/posts/new" for 127.0.0.1 at 2013-07-10 16:03:08 -0500
+Processing by RailsBlog::PostsController#new as HTML
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/_form.html.erb (2.5ms)
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/new.html.erb within layouts/rails_blog/application (3.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:08 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:08 -0500
+
+
+Started GET "/rails_blog/posts" for 127.0.0.1 at 2013-07-10 16:03:10 -0500
+Processing by RailsBlog::PostsController#index as HTML
+  [1m[35mRailsBlog::Post Load (0.1ms)[0m  SELECT "rails_blog_posts".* FROM "rails_blog_posts"
+  Rendered /Users/alejandro/Projects/personal/rails_blog/app/views/rails_blog/posts/index.html.erb within layouts/rails_blog/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/rails_blog/posts.css?body=1" for 127.0.0.1 at 2013-07-10 16:03:10 -0500
+
+
+Started GET "/assets/rails_blog/posts.js?body=1" for 127.0.0.1 at 2013-07-10 16:03:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRailsBlogPosts (20130710213528)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "rails_blog_posts" already exists: CREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRailsBlogPosts (20130710213528)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "rails_blog_posts" already exists: CREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRailsBlogPosts (20130710213528)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "rails_blog_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130710213528"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
