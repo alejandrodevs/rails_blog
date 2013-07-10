@@ -19,6 +19,7 @@ PATH
   remote: .
   specs:
     rails_blog (0.0.1)
+      haml-rails (~> 0.4)
       rails (~> 4.0.0)
 
 GEM
