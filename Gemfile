@@ -47,7 +47,7 @@ gem 'jbuilder', '~> 1.2'
 # -----------------------------------------------------------------------------
 
 gem 'haml'
-gem 'haml-rails'
+gem 'haml-rails', '~> 0.4'
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'flash_rails_messages', github: 'alejandrogutierrez/flash_rails_messages'
 gem "bootstrap-sass", "~> 2.3.2.0"

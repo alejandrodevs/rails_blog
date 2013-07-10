@@ -19,6 +19,7 @@ PATH
   remote: .
   specs:
     rails_blog (0.0.1)
+      haml-rails (~> 0.4)
       rails (~> 4.0.0)
 
 GEM
@@ -208,7 +209,7 @@ DEPENDENCIES
   flash_rails_messages!
   guard-rspec
   haml
-  haml-rails
+  haml-rails (~> 0.4)
   haml_assets
   jbuilder (~> 1.2)
   jquery-rails
