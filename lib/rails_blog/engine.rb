@@ -6,6 +6,7 @@ module RailsBlog
       g.template_engine :haml
       g.test_framework :rspec, :fixture => false
       g.javascript_engine :coffee
+      g.stylesheet_engine :scss
       g.integration_tool :rspec
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       g.helper false
