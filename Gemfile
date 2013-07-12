@@ -30,9 +30,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -46,10 +43,9 @@ gem 'jbuilder', '~> 1.2'
 # Custom gems
 # -----------------------------------------------------------------------------
 
-gem 'haml'
 gem 'haml-rails', '~> 0.4'
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
-gem 'flash_rails_messages', github: 'alejandrogutierrez/flash_rails_messages'
+gem 'flash_rails_messages'
 gem "bootstrap-sass", "~> 2.3.2.0"
 gem "will_paginate"
 
@@ -61,10 +57,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem "quiet_assets", ">= 1.0.2"
-end
-
-group :assets do
-  gem "haml_assets"
 end
 
 # -----------------------------------------------------------------------------
