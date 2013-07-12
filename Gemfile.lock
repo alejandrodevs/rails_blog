@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/alejandrogutierrez/flash_rails_messages.git
-  revision: 446adc84d3de389d8be26ec553a3eafa12152e87
-  specs:
-    flash_rails_messages (0.0.1)
-
-GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
   branch: rails4
@@ -73,6 +67,7 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.9.0)
+    flash_rails_messages (0.0.1)
     formatador (0.2.4)
     guard (1.8.1)
       formatador (>= 0.2.4)
@@ -90,9 +85,6 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
-    haml_assets (0.2.2)
-      haml
-      tilt
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -206,11 +198,9 @@ DEPENDENCIES
   devise!
   factory_girl
   factory_girl_rails
-  flash_rails_messages!
+  flash_rails_messages
   guard-rspec
-  haml
   haml-rails (~> 0.4)
-  haml_assets
   jbuilder (~> 1.2)
   jquery-rails
   quiet_assets (>= 1.0.2)
