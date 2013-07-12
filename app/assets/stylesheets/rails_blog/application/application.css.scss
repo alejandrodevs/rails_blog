@@ -1,0 +1,25 @@
+#general_wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.general_container {
+  width: 95% !important;
+}
+
+input {
+  border-radius: 0px !important;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  height: 30px !important;
+  line-height: 25px !important;
+}
+
+.btn {
+  height: 42px;
+}
+
+input[type="submit"].btn-large {
+  font-size: 15.5px !important;
+}

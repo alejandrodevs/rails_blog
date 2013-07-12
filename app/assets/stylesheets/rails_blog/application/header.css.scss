@@ -1,0 +1,26 @@
+.page-header-main {
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+.header_top_bar {
+  .menu_item {
+    margin-right: 10px;
+
+    .new_post {
+      color: black;
+      font-weight: bold;
+    }
+
+    .user_email {
+      color: black;
+    }
+  }
+}
