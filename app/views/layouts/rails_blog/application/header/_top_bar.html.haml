@@ -1,0 +1,11 @@
+.pull-right
+  - if user_signed_in?
+    %span.menu_item
+      = link_to "New post", "#", :class => "new_post"
+    %span.menu_item
+      = link_to current_user.email, profile_path, :class => "user_email"
+    %span.menu_item
+      = link_to 'Sign out', destroy_user_session_path, :method => :delete
+  - else
+    %span.menu_item
+      = link_to 'Sign in', new_user_session_path
