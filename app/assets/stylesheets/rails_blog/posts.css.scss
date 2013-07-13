@@ -1,3 +1,33 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-wrapper {
+  margin-bottom: 50px;
+}
+
+.post-wrapper-upper {
+  margin-bottom: 15px;
+}
+
+.post-title {
+  
+}
+
+.post-info {
+  font-size: 17px;
+  color: #b3b3b1;
+}
+
+.img-author {
+  float: right;
+  width: 80px;
+  height: 80px;
+  background: #CCC;
+}
+
+.post-content {
+  font-size: 17px;
+  line-height: 1.2;
+  text-align: justify;
+}
