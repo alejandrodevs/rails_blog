@@ -6,8 +6,10 @@
     = javascript_include_tag "rails_blog/application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    #general_wrapper
+    %header
       = render :partial => "layouts/rails_blog/application/header"
+
+    #general_wrapper
       .row-fluid
         .span9
           .general_container
@@ -15,4 +17,6 @@
             = yield
         .span3
           =# render :partial => "layouts/rails_blog/application/sidebar"
+
+    %footer
       = render :partial => "layouts/rails_blog/application/footer"
