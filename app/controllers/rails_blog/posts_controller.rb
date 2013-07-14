@@ -6,7 +6,7 @@ module RailsBlog
 
     # GET /posts
     def index
-      @posts = Post.all
+      @posts = Post.paginate(:page => params[:page], :per_page => 3)
     end
 
     # GET /posts/1
