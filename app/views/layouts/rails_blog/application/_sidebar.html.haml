@@ -1,28 +1,7 @@
-.img-wrapper{:style => "margin-bottom: 20px;"}
-  %img.img-circle{:style => "width: 90px; height: 90px; background: #CCC;"}
-%h4 About us
-.body{:style => "width: 96%; color: #535b60; text-align: justify;"}
-  Curabitur porttitor nibh ac magna facilisis congue. Quisque lacus metus, sollicitudin sed augue ac, rutrum scelerisque quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut scelerisque, elit ut facilisis viverra, arcu augue vehicula arcu, quis iaculis mi libero vel lectus.
-  %br
-  %br
-  Nullam neque enim, euismod quis mattis nec, auctor ut leo. Vestibulum a sodales metus. Mauris eget sapien quis neque commodo dignissim in ac diam. Sed aliquet velit a nulla commodo, a dictum lorem adipiscing.
-  %br
-  %br
-  %br
-%h4 Latest posts
-.body{:style => "margin-top: 20px;"}
-  %ul
-    %li
-      %a{:href => "#"} The first post in the AK blog
-    %li
-      %a{:href => "#"} The second post in the AK blog
-    %li
-      %a{:href => "#"} EmberJS vs AngularJS
-    %li
-      %a{:href => "#"} An introduction to the Android world
-    %li
-      %a{:href => "#"} Rspec vs MiniTest
-    %li
-      %a{:href => "#"} Ruby Internals and Tricks
-    %li
-      %a{:href => "#"} Rails best practices
+.search-wrapper
+  %input{:type => "text", :placeholder => "Search..."}
+
+.latest-posts-wrapper
+  %h4 Latest posts
+  .offset1
+    = link_to "All our posts ...", "#"
