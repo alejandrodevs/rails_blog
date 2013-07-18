@@ -1,7 +1,5 @@
 .search-wrapper
   %input{:type => "text", :placeholder => "Search..."}
 
-.latest-posts-wrapper
-  %h4 Latest posts
-  .offset1
-    = link_to "All our posts ...", "#"
+= render :partial => "layouts/rails_blog/application/sidebar_widgets/about_us"
+= render :partial => "layouts/rails_blog/application/sidebar_widgets/latest_posts"
