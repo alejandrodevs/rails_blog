@@ -1,4 +1,11 @@
 .header-container
-  %h1
-    = link_to "AgileKoding", root_path
-    %small Blog
+  .row-fluid
+    .span7
+      %h1
+        = link_to "AgileKoding", root_path
+        %small Blog
+    .span5
+      .menu_list
+        %span.menu_item
+          = link_to 'Sign in', "#"
+

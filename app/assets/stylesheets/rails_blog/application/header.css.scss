@@ -15,5 +15,19 @@ header {
         color: #999;
       }
     }
+
+    .menu_list {
+      float: right;
+      margin-top: 10px;
+
+      .menu_item {
+        background: #333333;
+        padding: 6px 10px;
+
+        a {
+          color: #EEE;
+        }
+      }
+    }
   }
 }
