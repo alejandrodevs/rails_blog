@@ -48,6 +48,8 @@ gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'flash_rails_messages'
 gem "bootstrap-sass", "~> 2.3.2.0"
 gem "will_paginate"
+gem "sunspot_rails"
+gem 'sunspot_solr'
 
 group :development, :test do
   gem 'rspec-rails'
