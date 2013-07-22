@@ -1,3 +1,33 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-wrapper-condensed {
+  margin-bottom: 20px;
+  
+  .post-wrapper-upper {
+    .post-title {
+      margin-bottom: 2px;
+
+      a {
+        color: #333333;
+      }
+    }
+    
+    .post-info {
+      font-size: 15px;
+      font-style: italic;
+      color: #b3b3b1;
+      margin-bottom: 5px;
+    }
+  }
+  
+  .post-content {
+    font-size: 15px;
+    line-height: 16px !important;
+    line-height: 1.2;
+    text-align: justify;
+  }
+}
+
+
