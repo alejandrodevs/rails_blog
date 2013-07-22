@@ -1,5 +1,9 @@
 RailsBlog::Engine.routes.draw do
-  root "posts#index"
+
+  match "search" => "searches#index", via: :get, as: "search_posts"
 
   resources :posts
+
+  root "posts#index"
+
 end
