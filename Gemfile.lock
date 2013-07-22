@@ -66,7 +66,6 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    fattr (2.2.1)
     ffi (1.9.0)
     flash_rails_messages (0.0.1)
     formatador (0.2.4)
@@ -86,7 +85,6 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
-    highline (1.6.19)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -110,14 +108,9 @@ GEM
     multi_json (1.7.7)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    options (2.3.0)
-      fattr
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
-    progress_bar (1.0.0)
-      highline (~> 1.6.1)
-      options (~> 2.3.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -223,7 +216,6 @@ DEPENDENCIES
   haml-rails (~> 0.4)
   jbuilder (~> 1.2)
   jquery-rails
-  progress_bar
   quiet_assets (>= 1.0.2)
   rails (= 4.0.0)
   rails_blog!

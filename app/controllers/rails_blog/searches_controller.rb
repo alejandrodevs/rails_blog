@@ -4,7 +4,7 @@ module RailsBlog
   class SearchesController < ApplicationController
     def index
       @search_criteria = params[:query]
-      @posts = Post.search{ fulltext @search_criteria }.results
+      @posts = Post.search{ fulltext params[:query] }.results
     end
   end
 end
