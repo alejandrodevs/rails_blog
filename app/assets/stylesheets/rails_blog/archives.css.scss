@@ -1,3 +1,23 @@
 // Place all the styles related to the archives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.archive-wrapper {
+  margin: 40px 0px 20px;
+
+  .year-label {
+    font-size: 55px;
+    margin: 25px 0px;
+    color: #666;
+  }
+
+  .month-label {
+    margin: 15px 0px;
+  }
+
+  .post {
+    a {
+      color: #333;
+    }
+  }
+}

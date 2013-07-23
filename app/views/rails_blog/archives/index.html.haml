@@ -1,2 +1,12 @@
-%h1 Archives#index
-%p Find me in app/views/rails_blog/archives/index.html.haml
+%h2 All our posts...
+
+.archive-wrapper.offset1
+  - @posts.each do |year, posts|
+    %h1.year-label= year
+    .offset1
+      - posts.each do |month, posts|
+        %h2.month-label= month
+        .offset1
+          - posts.each do |post|
+            %h4.post
+              = link_to post.title, post
