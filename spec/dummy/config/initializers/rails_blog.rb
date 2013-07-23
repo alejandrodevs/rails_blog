@@ -14,4 +14,22 @@ RailsBlog.setup do |config|
   #
   config.small_blog_title = "Blog"
 
+  # == Sidebar Widgets
+  #
+  # Set the widgets that are displayed in the sidebar
+  # whitin the layout.
+  #
+  # To add new widgets add this line...
+  #
+  #   config.sidebar_widgets.add :your_widget, order: 1, title: "Your title"
+  #
+  # The :your_widget param is the partial view name
+  # that should be located in the next folder:
+  #
+  #   "app/views/layout/rails_blog/application/sidebar_widgets"
+  #
+  config.sidebar_widgets.add :search, order: 1
+  config.sidebar_widgets.add :about_us, order: 2
+  config.sidebar_widgets.add :latest_posts, order: 3
+
 end
