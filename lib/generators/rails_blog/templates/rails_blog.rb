@@ -7,4 +7,11 @@ RailsBlog.setup do |config|
   #
   config.blog_title = "<%= Rails.application.class.name.split("::").first.titlecase %>"
 
+  # == Small Blog Title
+  #
+  # Set the small title that is displayed beside the
+  # main title.
+  #
+  config.small_blog_title = "Blog"
+
 end
