@@ -1,4 +1,8 @@
+require "rails_blog/setup"
+
 module RailsBlog
+  extend Setup
+
   class Engine < ::Rails::Engine
     isolate_namespace RailsBlog
 
