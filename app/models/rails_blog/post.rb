@@ -20,7 +20,7 @@ module RailsBlog
     def self.grouped_for_archive
       grouped_by_year = self.all.group_by{ |post| post.created_at.year }
       grouped_by_year.each do |year, posts|
-        grouped_by_year[year] = posts.group_by{ |post| post.created_at.month }
+        grouped_by_year[year] = posts.group_by{ |post| post.created_at.strftime("%B") }
       end
     end
   end
