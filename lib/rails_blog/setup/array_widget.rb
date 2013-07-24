@@ -9,7 +9,6 @@ module RailsBlog
       def add name, options = {}
         self.push OpenStruct.new({
           :name  => name,
-          :title => options[:title],
           :order => options[:order]
         })
       end

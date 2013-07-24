@@ -1,2 +1,2 @@
 - RailsBlog.sidebar_widgets.sorted.each do |widget|
-  = render :partial => "layouts/rails_blog/application/sidebar_widgets/#{widget[:name]}"
+  = render :partial => "layouts/rails_blog/application/sidebar_widgets/#{widget[:name]}", :locals => { :widget => widget }
