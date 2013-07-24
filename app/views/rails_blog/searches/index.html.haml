@@ -4,7 +4,7 @@
   .post-wrapper-condensed
     .row-fluid.post-wrapper-upper
       %h4.post-title
-        = link_to post.title, post
+        = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
         = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     %p.post-content

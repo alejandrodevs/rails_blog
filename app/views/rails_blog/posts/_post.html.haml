@@ -2,7 +2,7 @@
   .row-fluid.post-wrapper-upper
     .span9
       %h2.post-title
-        = link_to post.title, post
+        = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
         = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     .span3

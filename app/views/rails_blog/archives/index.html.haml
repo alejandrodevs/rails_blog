@@ -9,4 +9,4 @@
         .offset1
           - posts.each do |post|
             %h4.post
-              = link_to post.title, post
+              = link_to post.title, custom_post_path(*post.url_params)
