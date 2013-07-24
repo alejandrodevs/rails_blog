@@ -2,8 +2,10 @@
 log/*.log
 pkg/
 .rvmrc
+spec/dummy/solr/
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
+spec/dummy/log/*.lck
 spec/dummy/tmp/
 spec/dummy/.sass-cache
