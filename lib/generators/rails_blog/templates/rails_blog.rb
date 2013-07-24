@@ -14,6 +14,12 @@ RailsBlog.setup do |config|
   #
   config.small_blog_title = "Blog"
 
+  # == Index Posts Per Page
+  #
+  # Set number of posts per page in posts index view.
+  #
+  config.posts_per_page = 3
+
   # == Sidebar Widgets
   #
   # Set the widgets that are displayed in the sidebar

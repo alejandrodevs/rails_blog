@@ -5,7 +5,8 @@ module RailsBlog
   module Setup
 
     mattr_accessor :blog_title,
-                   :small_blog_title
+                   :small_blog_title,
+                   :posts_per_page
 
     def sidebar_widgets
       @sidebar_widgets ||= ArrayWidget.new
