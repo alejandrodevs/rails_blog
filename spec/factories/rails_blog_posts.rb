@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :rails_blog_post, :class => 'Post' do
     title "MyString"
-    content "MyText"
+    body "MyText"
   end
 end

@@ -2,7 +2,7 @@ module RailsBlog
   class Post < ActiveRecord::Base
 
     searchable do
-      text :title, :content
+      text :title, :body
     end
 
     after_save :update_sunspot
@@ -14,7 +14,7 @@ module RailsBlog
     end
 
     def description
-      self.content.first(200).chomp(" ") + "..."
+      self.body.first(200).chomp(" ") + "..."
     end
 
     def self.grouped_for_archive

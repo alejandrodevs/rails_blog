@@ -1,8 +1,9 @@
 class CreateRailsBlogPosts < ActiveRecord::Migration
   def change
     create_table :rails_blog_posts do |t|
-      t.string :title
-      t.text :content
+      t.string :title, :limit => 100
+      t.string :permalink, :limit => 100
+      t.text :body
 
       t.timestamps
     end

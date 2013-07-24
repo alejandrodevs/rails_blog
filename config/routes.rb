@@ -5,6 +5,8 @@ RailsBlog::Engine.routes.draw do
 
   resources :posts, only: [:index, :show]
 
+	match "/:year/:month/:day/:id(.:format)" => "posts#show", via: "get", as: 'custom_post'
+
   root "posts#index"
 
 end

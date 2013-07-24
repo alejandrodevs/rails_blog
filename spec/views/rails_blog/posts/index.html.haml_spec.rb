@@ -5,11 +5,11 @@ describe "posts/index" do
     assign(:posts, [
       stub_model(Post,
         :title => "Title",
-        :content => "MyText"
+        :body => "MyText"
       ),
       stub_model(Post,
         :title => "Title",
-        :content => "MyText"
+        :body => "MyText"
       )
     ])
   end

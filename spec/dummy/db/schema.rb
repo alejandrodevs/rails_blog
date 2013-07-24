@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(version: 20130710230333) do
 
   create_table "rails_blog_posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",      limit: 100
+    t.string   "permalink",  limit: 100
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
