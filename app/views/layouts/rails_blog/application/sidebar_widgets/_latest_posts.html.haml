@@ -1,8 +1,0 @@
-.latest-posts-wrapper.sidebar-widget
-  %h4 Latest posts
-  %ul.latest_posts_list
-    - Rails.cache.fetch('latest_posts'){ RailsBlog::Post.limit(8) }.each do |post|
-      %li
-        = link_to post.title, post
-  .offset1
-    = link_to "All our posts ...", archive_path
