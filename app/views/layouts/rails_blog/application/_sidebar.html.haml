@@ -1,3 +1,2 @@
 - RailsBlog.sidebar_widgets.sorted.each do |widget|
-  - if File.exist?(Rails.root.join('app', 'views', 'rails_blog', 'sidebar', widget[:name].to_s))
-    = render :partial => "rails_blog/sidebar/#{widget[:name]}", :locals => { :widget => widget }
+  = render :partial => "rails_blog/sidebar/#{widget[:name]}", :locals => { :widget => widget }
