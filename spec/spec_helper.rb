@@ -39,4 +39,37 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+	config.before(:suite) do
+    `bundle exec rake sunspot:solr:start RAILS_ENV=test`
+    begin
+      Sunspot.search(RailsBlog::Post)
+    rescue Errno::ECONNREFUSED
+      sleep 1 && retry
+    end
+  end
+
+  config.after(:suite) do
+    `bundle exec rake sunspot:solr:stop RAILS_ENV=test `
+  end
+
+	#solr fake session
+  config.before :suite do
+    module Sunspot
+      def self.stub_session
+        @sub_session ||= Sunspot::Rails::StubSessionProxy.new self.session
+      end
+    end
+
+  end
+
+  config.before :each do
+    Sunspot.session = Sunspot.stub_session
+    Sunspot.session = Sunspot.session.original_session if example.metadata[:solr]
+
+    Sunspot.remove_all!
+  end
+
+  #
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 end

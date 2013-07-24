@@ -6,11 +6,11 @@ module RailsBlog
     end
 
     before_save :set_permalink
-    after_save :update_sunspot
+    after_save :sunspot_commit
 
     default_scope -> { order("created_at DESC") }
 
-    def update_sunspot
+    def sunspot_commit
       Sunspot.commit
     end
 
