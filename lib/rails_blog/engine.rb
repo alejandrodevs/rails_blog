@@ -1,4 +1,5 @@
 require "rails_blog/setup"
+require 'devise'
 
 module RailsBlog
   extend Setup
