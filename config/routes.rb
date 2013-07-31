@@ -1,6 +1,6 @@
 RailsBlog::Engine.routes.draw do
 
-  devise_for :users, :class_name => "RailsBlog::User"
+  devise_for :users, :class_name => "RailsBlog::User", module: :devise
   resources :users
 
   match "archive" => "archives#index", via: :get, as: "archive"
