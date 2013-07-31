@@ -1,0 +1,11 @@
+#sign_in
+  %h2 Sign in
+
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .controls
+      = f.email_field :email, :placeholder => "Email..."
+
+    .controls
+      = f.password_field :password, :placeholder => "Password..."
+
+    = f.submit "Log in!", :class => "btn btn-inverse btn-block btn-large"
