@@ -10,6 +10,8 @@ RailsBlog::Engine.routes.draw do
   resources :posts, only: [:index]
   resources :users
 
+  put "profile/update"
+  match "/profile" => "profile#index", :as => :profile, :via => :get
 	match "/:year/:month/:day/:id(.:format)" => "posts#show", via: "get", as: 'custom_post'
 
   root "posts#index"

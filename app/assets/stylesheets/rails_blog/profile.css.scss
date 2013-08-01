@@ -1,0 +1,28 @@
+// Place all the styles related to the profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper-profile {
+  h3 {
+    small {
+      font-size: 18px;
+    }
+  }
+
+  form {
+    .wrapper-user-photo {
+      margin: 25px 0px;
+
+      img {
+        width: 150px;
+        height: 150px;
+        background: #CCC;
+        border-radius: 0px;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+    }
+  }
+}

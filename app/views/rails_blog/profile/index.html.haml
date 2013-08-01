@@ -1,0 +1,15 @@
+.wrapper-profile
+  %h3
+    = @user.name
+    %small profile
+
+  = form_for @user, :url => profile_update_path, :method => :put do |f|
+    .wrapper-user-photo
+      %img.img-rounded
+
+    .control-label
+      = f.label :name
+      .controls
+        = f.text_field :name, :class => "input-xxlarge"
+
+    = f.submit "Save changes", :class => "btn btn-inverse btn-large"
