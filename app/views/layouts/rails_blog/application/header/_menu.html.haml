@@ -1,6 +1,8 @@
 .menu-wrapper.clearfix
   - if user_signed_in?
     %span.menu-item
+      = link_to 'New post', new_post_path
+    %span.menu-item
       = link_to current_user.email, profile_path
     %span.menu-item
       = link_to 'Sign out', destroy_user_session_path, :method => :delete
