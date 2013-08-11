@@ -6,11 +6,15 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .control-label
     = f.label :title
-    = f.text_field :title
-  .field
+    .controls
+      = f.text_field :title, :class => "input-xxlarge"
+
+  .control-label
     = f.label :body
-    = f.text_area :body
+    .controls
+      = f.text_area :body, :class => "input-xxlarge", rows: 6
+
   .actions
-    = f.submit 'Save'
+    = f.submit "Save post", :class => "btn btn-inverse btn-large"

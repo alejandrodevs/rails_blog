@@ -7,7 +7,7 @@
   width: 95% !important;
 }
 
-input {
+input, textarea {
   border-radius: 0px !important;
 }
 
@@ -26,4 +26,8 @@ input[type="submit"].btn-large {
 
 .alert {
   margin-bottom: 35px !important;
+}
+
+.actions {
+  margin-top: 20px;
 }
