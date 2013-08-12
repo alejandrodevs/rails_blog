@@ -2,21 +2,19 @@
 
 This gem aims to provide a simple and basic blogging engine in Rails.
 
-## Installation
+## Getting started
 
 Add this line to your application's Gemfile:
 
     gem 'rails_blog'
 
-And then execute:
+After you install RailsBlog and add it to your Gemfile, you need to run the generator:
 
-    $ bundle install
+    rails generate rails_blog:install
 
-Or install it yourself with:
+And this other generator:
 
-    $ gem install rails_blog
-
-## Usage
+    rails generate rails_blog:sidebar:views
 
 Copy engine migrations
 
