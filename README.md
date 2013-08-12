@@ -22,6 +22,10 @@ Copy engine migrations
 
     rake rails_blog:install:migrations
 
+Run them
+
+    rake db:migrate
+
 And in your routes.rb file add this...
 
     mount RailsBlog::Engine => '/blog'
