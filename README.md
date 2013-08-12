@@ -16,10 +16,12 @@ Or install it yourself with:
 
     $ gem install rails_blog
 
+## Usage
+
 Copy engine migrations
 
     rake rails_blog:install:migrations
 
-And in your routes.rb file and this...
+And in your routes.rb file add this...
 
     mount RailsBlog::Engine => '/blog'

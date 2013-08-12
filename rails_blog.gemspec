@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'haml-rails', '~> 0.4'
   s.add_dependency 'uglifier', '~> 1.3.0'
   s.add_dependency 'coffee-rails', '~> 4.0.0'
-  s.add_dependency 'turbolinks', '~> 1.2.0'
+  s.add_dependency 'turbolinks', '~> 1.3.0'
   s.add_dependency 'jbuilder', '~> 1.5.0'
   s.add_dependency 'jquery-rails', '~> 3.0.4'
   s.add_dependency 'sass-rails', '~> 4.0.0'
