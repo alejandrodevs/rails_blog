@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jbuilder', '~> 1.5.0'
   s.add_dependency 'jquery-rails', '~> 3.0.4'
   s.add_dependency 'sass-rails', '~> 4.0.0'
-  s.add_dependency 'flash_rails_messages', '~> 0.0.1'
+  s.add_dependency 'flash_rails_messages', '~> 0.0.3'
   s.add_dependency 'bootstrap-sass', '~> 2.3.2.1'
   s.add_dependency 'will_paginate', '~> 3.0.4'
   s.add_dependency 'sunspot_rails', '~> 2.0.0'
