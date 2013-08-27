@@ -1,5 +1,10 @@
 require "rails_blog/setup"
-require 'devise'
+require "devise"
+require "sunspot_rails"
+require "will_paginate"
+require "haml-rails"
+require "bootstrap-sass"
+require "flash_rails_messages"
 
 module RailsBlog
   extend Setup
