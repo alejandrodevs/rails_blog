@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'will_paginate', '~> 3.0.4'
   s.add_dependency 'sunspot_rails', '~> 2.0.0'
   s.add_dependency 'sunspot_solr', '~> 2.0.0'
+  s.add_dependency 'gravatar_image_tag', '~> 1.1.3'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails', '~> 2.14.0'

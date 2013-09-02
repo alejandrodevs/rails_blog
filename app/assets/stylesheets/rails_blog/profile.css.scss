@@ -13,11 +13,16 @@
     .wrapper-user-photo {
       margin: 25px 0px;
 
-      img {
-        width: 150px;
+      a {
+        width: 160px;
         height: 150px;
-        background: #CCC;
-        border-radius: 0px;
+        display: block;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 0px;
+        }
       }
     }
   }

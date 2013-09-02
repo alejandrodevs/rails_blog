@@ -5,7 +5,7 @@
 
   = form_for @user, :url => profile_update_path, :method => :put do |f|
     .wrapper-user-photo
-      %img.img-rounded
+      = link_to gravatar_image_tag(current_user.email, :alt => 'Alejandro Gutiérrez', :class => 'img-polaroid', :gravatar => { :size => 150 }), "http://www.gravatar.com", id: 'gravatar_link', target: "blank"
 
     .control-label
       = f.label :name

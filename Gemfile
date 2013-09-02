@@ -50,6 +50,7 @@ gem "bootstrap-sass", "~> 2.3.2.0"
 gem "will_paginate"
 gem "sunspot_rails"
 gem 'sunspot_solr'
+gem 'gravatar_image_tag'
 
 group :development, :test do
   gem 'rspec-rails'

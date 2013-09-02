@@ -5,6 +5,7 @@ require "will_paginate"
 require "haml-rails"
 require "bootstrap-sass"
 require "flash_rails_messages"
+require "gravatar_image_tag"
 
 module RailsBlog
   extend Setup
