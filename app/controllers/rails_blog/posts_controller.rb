@@ -27,6 +27,7 @@ module RailsBlog
     # POST /posts
     def create
       @post = Post.new(post_params)
+      @post.user = current_user
 
       if @post.save
         redirect_to custom_post_path(*@post.url_params), notice: 'Post was successfully created.'

@@ -9,7 +9,7 @@
     margin-bottom: 15px;
     
     .post-title {
-      margin-bottom: 0px;
+      margin-bottom: 5px;
 
       a {
         color: #333333;
@@ -20,6 +20,10 @@
       font-size: 17px;
       font-style: italic;
       color: #b3b3b1;
+
+      a {
+        color: #b3b3b1;
+      }
     }
 
     .img-author {

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20130731032118) do
     t.string   "title",      limit: 100
     t.string   "permalink",  limit: 100
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,6 +5,8 @@ module RailsBlog
       text :title, :body
     end
 
+    belongs_to :user
+
     before_save :set_permalink
     after_save :sunspot_commit
 
@@ -14,7 +16,7 @@ module RailsBlog
       Sunspot.commit
     end
 
-    def description
+    def search_description
       self.body.first(200).chomp(" ") + "..."
     end
 
@@ -31,6 +33,13 @@ module RailsBlog
 
     def url_params
       [self.created_at.year, self.created_at.month, self.created_at.day, self.permalink]
+    end
+
+    def published_at_description
+      ", posted on
+      #{self.created_at.strftime("%B")}
+      #{self.created_at.day.to_s.rjust(2, "0")},
+      #{self.created_at.year}"
     end
   end
 end

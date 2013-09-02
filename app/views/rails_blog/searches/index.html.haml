@@ -6,6 +6,7 @@
       %h4.post-title
         = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
-        = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        = link_to post.user.name, post.user
+        = post.published_at_description
     %p.post-content
-      = post.description
+      = post.search_description
