@@ -21,6 +21,8 @@ PATH
       jbuilder (~> 1.5.0)
       jquery-rails (~> 3.0.4)
       rails (~> 4.0.0)
+      redcarpet (~> 3.0.0)
+      rouge (~> 0.4.0)
       sass-rails (~> 4.0.0)
       sunspot_rails (~> 2.0.0)
       sunspot_solr (~> 2.0.0)
@@ -150,6 +152,9 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    redcarpet (3.0.0)
+    rouge (0.4.0)
+      thor
     rsolr (1.0.9)
       builder (>= 2.1.2)
     rspec (2.14.1)
@@ -231,6 +236,8 @@ DEPENDENCIES
   quiet_assets (>= 1.0.2)
   rails (= 4.0.0)
   rails_blog!
+  redcarpet
+  rouge
   rspec-rails
   sass-rails (~> 4.0.0)
   shoulda-matchers

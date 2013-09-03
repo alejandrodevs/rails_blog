@@ -51,6 +51,8 @@ gem "will_paginate"
 gem "sunspot_rails"
 gem 'sunspot_solr'
 gem 'gravatar_image_tag'
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
   gem 'rspec-rails'

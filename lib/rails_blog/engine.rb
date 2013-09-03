@@ -1,4 +1,5 @@
 require "rails_blog/setup"
+require "rails_blog/markdown"
 require "devise"
 require "sunspot_rails"
 require "will_paginate"
@@ -6,6 +7,8 @@ require "haml-rails"
 require "bootstrap-sass"
 require "flash_rails_messages"
 require "gravatar_image_tag"
+require "redcarpet"
+require "rouge"
 
 module RailsBlog
   extend Setup

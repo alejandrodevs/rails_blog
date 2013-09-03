@@ -35,8 +35,10 @@
   }
 
   .post-content {
-    font-size: 17px;
-    line-height: 22px;
-    line-height: 1.2;
+    p {
+      font-size: 17px;
+      line-height: 22px;
+      line-height: 1.2;
+    }
   }
 }

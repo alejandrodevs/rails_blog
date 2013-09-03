@@ -8,5 +8,5 @@
       %p.post-info
         = link_to post.user.name, post.user
         = post.published_at_description
-    %p.post-content
-      = post.search_description
+    .post-content
+      = preserve RailsBlog::Markdown.render(post.search_description).html_safe
