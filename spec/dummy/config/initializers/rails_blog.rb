@@ -7,6 +7,13 @@ RailsBlog.setup do |config|
   #
   config.blog_title = "RailsBlog"
 
+  # == Blog Title Image
+  #
+  # Set a title image instead simple text. Just pass the
+  # image path. By default is false.
+  #
+  config.blog_title_image = false
+
   # == Small Blog Title
   #
   # Set the small title that is displayed beside the

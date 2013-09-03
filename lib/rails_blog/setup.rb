@@ -5,6 +5,7 @@ module RailsBlog
   module Setup
 
     mattr_accessor :blog_title,
+                   :blog_title_image,
                    :small_blog_title,
                    :posts_per_page
 

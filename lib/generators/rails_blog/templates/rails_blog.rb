@@ -7,6 +7,15 @@ RailsBlog.setup do |config|
   #
   config.blog_title = "<%= Rails.application.class.name.split("::").first.titlecase %>"
 
+  # == Blog Title Image
+  #
+  # Set a title image instead simple text. Just pass the
+  # image filename. Example...
+  #
+  #   config.blog_title_image = "logo.png"
+  #
+  config.blog_title_image = false
+
   # == Small Blog Title
   #
   # Set the small title that is displayed beside the
