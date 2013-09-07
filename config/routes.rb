@@ -9,6 +9,7 @@ RailsBlog::Engine.routes.draw do
 
   resources :posts
   resources :users
+  resources :admins, controller: "users"
 
   put "profile/update"
   match "/profile" => "profile#index", :as => :profile, :via => :get

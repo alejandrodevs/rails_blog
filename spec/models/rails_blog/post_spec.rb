@@ -6,10 +6,10 @@ module RailsBlog
       expect(described_class).to respond_to(:searchable?)
 		end
 
-    describe "#description" do
+    describe "#search_description" do
       it "returns a two-hundred-long description" do
         subject.body = "a" * 500
-        expect(subject.description).to eql(("a" * 200) + "...")
+        expect(subject.search_description).to eql(("a" * 200) + "...")
       end
     end
 

@@ -8,5 +8,9 @@ module RailsBlog
 
     has_many :posts
 
+    def admin?
+      self.type == "RailsBlog::Admin"
+    end
+
   end
 end

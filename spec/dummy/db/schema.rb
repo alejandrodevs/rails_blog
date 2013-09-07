@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130731032118) do
 
   create_table "rails_blog_users", force: true do |t|
     t.string   "name"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
