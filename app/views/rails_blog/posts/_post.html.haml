@@ -4,9 +4,9 @@
       %h2.post-title
         = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
-        = link_to post.user.name, post.user
+        = link_to post.author.name, post.author
         = post.published_at_description
     .span3
-      = link_to gravatar_image_tag(post.user.email, :alt => post.user.name, :class => 'img-circle img-author', :gravatar => { :size => 80 }), post.user
+      = link_to gravatar_image_tag(post.author.email, :alt => post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 80 }), post.author
   .post-content
     = preserve RailsBlog::Markdown.render(post.body).html_safe

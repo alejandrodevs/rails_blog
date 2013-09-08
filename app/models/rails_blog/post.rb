@@ -6,7 +6,7 @@ module RailsBlog
       text :title, :body
     end
 
-    belongs_to :user
+    belongs_to :author, class_name: "User"
 
     before_save :set_permalink
     after_save :sunspot_commit
@@ -48,7 +48,12 @@ module RailsBlog
     end
 
     def url_params
-      [self.published_at.year, self.published_at.month, self.published_at.day, self.permalink]
+      [
+        self.published_at.year,
+        self.published_at.month.to_s.rjust(2, "0"),
+        self.published_at.day.to_s.rjust(2, "0"),
+        self.permalink
+      ]
     end
 
     def set_published_date
