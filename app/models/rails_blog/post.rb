@@ -12,7 +12,6 @@ module RailsBlog
     after_save :sunspot_commit
 
     default_scope -> { order("created_at DESC") }
-    scope :published, -> { where(state: "published") }
 
     aasm :column => :state do
       state :unpublished, :initial => true

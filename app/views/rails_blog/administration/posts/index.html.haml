@@ -1,2 +1,4 @@
 = render :partial => 'post', :collection => @posts
+- if @posts.empty?
+  %p.not-posts= "There isn't any #{params[:state] || "unpublished"} post."
 = will_paginate @posts

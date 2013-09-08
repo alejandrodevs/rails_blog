@@ -2,7 +2,7 @@
   - if user_signed_in?
     - if current_user.admin?
       %span.menu-item
-        = link_to 'Administration', administration_posts_path
+        = link_to 'Administration', administration_root_path
     %span.menu-item
       = link_to 'New post', new_post_path
     %span.menu-item

@@ -1,9 +1,7 @@
 .admin-menu.clearfix
   .admin-menu-item
-    = link_to 'Unpublished posts', new_post_path
+    = link_to 'Unpublished posts', administration_posts_by_state_path(state: "unpublished")
   .admin-menu-item
-    = link_to 'Published posts', new_post_path
+    = link_to 'Published posts', administration_posts_by_state_path(state: "published")
   .admin-menu-item
-    = link_to 'Rejected posts', new_post_path
-  .admin-menu-item
-    = link_to 'Users', new_post_path
+    = link_to 'Rejected posts', administration_posts_by_state_path(state: "rejected")

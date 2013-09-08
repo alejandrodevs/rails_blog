@@ -3,9 +3,8 @@
     .row-fluid.post-wrapper-upper
       .span9
         %h3.post-title
-          = link_to post.title, custom_post_path(*post.url_params)
+          = link_to post.title, administration_post_path(post)
         %p.post-info
-          = link_to post.author.name, post.author
-          = post.published_at_description
+          = post.author.name
       .span3
-        = link_to gravatar_image_tag(post.author.email, :alt => post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 60 }), post.author
+        = gravatar_image_tag(post.author.email, :alt => post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 60 })

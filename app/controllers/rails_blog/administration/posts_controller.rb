@@ -4,16 +4,23 @@ module RailsBlog
   module Administration
     class PostsController < ApplicationController
       before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-      before_action :set_post, only: [:edit, :update, :destroy]
+      before_action :set_post, only: [:show, :edit, :update, :destroy]
 
       # GET /posts
       def index
-        @posts = Post.paginate(:page => params[:page], :per_page => 10)
+        if params[:state]
+          @posts = Post.where(state: params[:state]).paginate(:page => params[:page], :per_page => 10)
+        else
+          @posts = Post.unpublished.paginate(:page => params[:page], :per_page => 10)
+        end
       end
 
-      # GET /yyyy/mm/dd/post-name
+      # GET /posts/1
       def show
-        @post = Post.find_by_permalink(params[:id])
+        if params[:state]
+          @post.send(:"#{params[:state]}!")
+          flash[:notice] = "Post has been updated successfully."
+        end
       end
 
       # GET /posts/new
