@@ -1,0 +1,9 @@
+.user-wrapper
+  .row-fluid
+    .span2
+      = gravatar_image_tag(@user.email, :alt => @user.name, :class => 'img-circle img-author', :gravatar => { :size => 90 })
+    .span10
+      %h2.user-name
+        = @user.name
+      %p.user-email
+        = @user.email

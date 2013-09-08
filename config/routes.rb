@@ -8,8 +8,8 @@ RailsBlog::Engine.routes.draw do
   match "search"  => "searches#index", via: :get, as: "search_posts"
 
   resources :posts
-  resources :users
-  resources :admins, controller: "users"
+  resources :users, only: [:show]
+  resources :admins, controller: "users", only: [:show]
 
   namespace :administration do
     resources :posts

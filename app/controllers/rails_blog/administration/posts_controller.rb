@@ -8,7 +8,7 @@ module RailsBlog
 
       # GET /posts
       def index
-        @posts = Post.paginate(:page => params[:page], :per_page => RailsBlog.posts_per_page)
+        @posts = Post.paginate(:page => params[:page], :per_page => 10)
       end
 
       # GET /yyyy/mm/dd/post-name

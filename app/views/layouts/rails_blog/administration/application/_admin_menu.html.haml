@@ -1,7 +1,9 @@
 .admin-menu.clearfix
   .admin-menu-item
+    = link_to 'Unpublished posts', new_post_path
+  .admin-menu-item
+    = link_to 'Published posts', new_post_path
+  .admin-menu-item
+    = link_to 'Rejected posts', new_post_path
+  .admin-menu-item
     = link_to 'Users', new_post_path
-  .admin-menu-item
-    = link_to 'Unauthorized posts', new_post_path
-  .admin-menu-item
-    = link_to 'Pending posts', new_post_path
