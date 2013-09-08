@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= RailsBlog.blog_title
+    = stylesheet_link_tag "rails_blog/application", :media => "all", "data-turbolinks-track" => true
+    = javascript_include_tag "rails_blog/application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render :partial => "layouts/rails_blog/application/header"
+
+    #general_wrapper
+      .row-fluid
+        .span9
+          .general_container
+            = render :partial => "layouts/rails_blog/administration/application/admin_menu"
+            = render_flash_messages
+            = yield
+        .span3
+          = render :partial => "layouts/rails_blog/application/sidebar"
+
+    %footer
+      = render :partial => "layouts/rails_blog/application/footer"

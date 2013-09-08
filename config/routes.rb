@@ -11,6 +11,10 @@ RailsBlog::Engine.routes.draw do
   resources :users
   resources :admins, controller: "users"
 
+  namespace :administration do
+    resources :posts
+  end
+
   put "profile/update"
   match "/profile" => "profile#index", :as => :profile, :via => :get
 	match "/:year/:month/:day/:id(.:format)" => "posts#show", via: "get", as: 'custom_post'

@@ -1,5 +1,5 @@
 module RailsBlog
-  module Admin
+  module Administration
     class ApplicationController < ActionController::Base
     end
   end
