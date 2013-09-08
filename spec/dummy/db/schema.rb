@@ -14,10 +14,12 @@
 ActiveRecord::Schema.define(version: 20130731032118) do
 
   create_table "rails_blog_posts", force: true do |t|
-    t.string   "title",      limit: 100
-    t.string   "permalink",  limit: 100
+    t.string   "title",        limit: 100
+    t.string   "permalink",    limit: 100
     t.text     "body"
     t.integer  "user_id"
+    t.string   "state"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

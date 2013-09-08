@@ -1,5 +1,6 @@
 module RailsBlog
   class Post < ActiveRecord::Base
+    include AASM
 
     searchable do
       text :title, :body
@@ -11,6 +12,21 @@ module RailsBlog
     after_save :sunspot_commit
 
     default_scope -> { order("created_at DESC") }
+    scope :published, -> { where(state: "published") }
+
+    aasm :column => :state do
+      state :unpublished, :initial => true
+      state :published
+      state :rejected
+
+      event :publish, :after => :set_published_date do
+        transitions :from => :unpublished, :to => :published
+      end
+
+      event :reject do
+        transitions :from => :unpublished, :to => :rejected
+      end
+    end
 
     def sunspot_commit
       Sunspot.commit
@@ -25,21 +41,26 @@ module RailsBlog
     end
 
     def self.grouped_for_archive
-      grouped_by_year = self.all.group_by{ |post| post.created_at.year }
+      grouped_by_year = self.published.group_by{ |post| post.created_at.year }
       grouped_by_year.each do |year, posts|
         grouped_by_year[year] = posts.group_by{ |post| post.created_at.strftime("%B") }
       end
     end
 
     def url_params
-      [self.created_at.year, self.created_at.month, self.created_at.day, self.permalink]
+      [self.published_at.year, self.published_at.month, self.published_at.day, self.permalink]
+    end
+
+    def set_published_date
+      self.published_at = DateTime.now
+      self.save
     end
 
     def published_at_description
       ", posted on
-      #{self.created_at.strftime("%B")}
-      #{self.created_at.day.to_s.rjust(2, "0")},
-      #{self.created_at.year}"
+      #{self.published_at.strftime("%B")}
+      #{self.published_at.day.to_s.rjust(2, "0")},
+      #{self.published_at.year}"
     end
   end
 end

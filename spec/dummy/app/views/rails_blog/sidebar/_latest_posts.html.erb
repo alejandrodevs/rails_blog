@@ -1,7 +1,7 @@
 <div class="latest-posts-wrapper sidebar-widget">
   <h4>Latest posts</h4>
   <ul class="latest-posts-list">
-    <% Rails.cache.fetch('latest_posts'){ RailsBlog::Post.limit(8) }.each do |post| %>
+    <% RailsBlog::Post.published.limit(8).each do |post| %>
       <li>
         <%= link_to post.title, custom_post_path(*post.url_params) %>
       </li>

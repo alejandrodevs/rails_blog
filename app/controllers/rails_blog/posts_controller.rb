@@ -7,12 +7,12 @@ module RailsBlog
 
     # GET /posts
     def index
-      @posts = Post.paginate(:page => params[:page], :per_page => RailsBlog.posts_per_page)
+      @posts = Post.published.paginate(:page => params[:page], :per_page => RailsBlog.posts_per_page)
     end
 
     # GET /yyyy/mm/dd/post-name
     def show
-			@post = Post.find_by_permalink(params[:id])
+			@post = Post.published.find_by_permalink(params[:id])
     end
 
     # GET /posts/new

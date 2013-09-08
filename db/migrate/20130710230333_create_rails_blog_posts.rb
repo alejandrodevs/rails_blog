@@ -5,6 +5,8 @@ class CreateRailsBlogPosts < ActiveRecord::Migration
       t.string :permalink, :limit => 100
       t.text :body
       t.integer :user_id
+      t.string :state
+      t.datetime :published_at
 
       t.timestamps
     end

@@ -13,6 +13,7 @@ PATH
   remote: .
   specs:
     rails_blog (0.0.1)
+      aasm (~> 3.0.22)
       bootstrap-sass (~> 2.3.2.1)
       coffee-rails (~> 4.0.0)
       flash_rails_messages (~> 0.0.4)
@@ -31,6 +32,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (3.0.22)
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
       mail (~> 2.5.3)
@@ -222,6 +224,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   bootstrap-sass (~> 2.3.2.0)
   coffee-rails (~> 4.0.0)
   devise!
