@@ -3,7 +3,7 @@
     - if @post.aasm_events_for_current_state.present?
       .posts-available-states.clearfix
         - @post.aasm_events_for_current_state.each do |state|
-          .post-available-state= link_to state, administration_posts_action_path(state: state)
+          .post-available-state= link_to state.to_s.capitalize, administration_posts_action_path(state: state)
     .row-fluid.post-wrapper-upper
       .span9
         %h2.post-title
