@@ -8,7 +8,7 @@
         = @post.title
       %p.post-info
         = @post.author.name
-        = @post.created_at_description
+        = @post.description
     .span3
       = gravatar_image_tag(@post.author.email, :alt => @post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 80 })
   .post-content

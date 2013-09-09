@@ -5,7 +5,7 @@
         = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
         = link_to post.author.name, post.author
-        = post.published_at_description
+        = post.description
     .span3
       = link_to gravatar_image_tag(post.author.email, :alt => post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 80 }), post.author
   .post-content

@@ -6,5 +6,6 @@
           = link_to post.title, administration_post_path(post)
         %p.post-info
           = post.author.name
+          = post.description
       .span3
         = gravatar_image_tag(post.author.email, :alt => post.author.name, :class => 'img-circle img-author', :gravatar => { :size => 60 })

@@ -54,11 +54,15 @@ module RailsBlog
 
     def url_params
       [
-        self.published_at.year,
-        self.published_at.month.to_s.rjust(2, "0"),
-        self.published_at.day.to_s.rjust(2, "0"),
+        self.dated_at.year,
+        self.dated_at.month.to_s.rjust(2, "0"),
+        self.dated_at.day.to_s.rjust(2, "0"),
         self.permalink
       ]
+    end
+
+    def dated_at
+      self.published_at || self.created_at
     end
 
     def set_published_date
@@ -66,18 +70,12 @@ module RailsBlog
       self.save
     end
 
-    def published_at_description
+    def description
       ", posted on
-      #{self.published_at.strftime("%B")}
-      #{self.published_at.day.to_s.rjust(2, "0")},
-      #{self.published_at.year}"
+      #{self.dated_at.strftime("%B")}
+      #{self.dated_at.day.to_s.rjust(2, "0")},
+      #{self.dated_at.year}"
     end
 
-    def created_at_description
-      ", posted on
-      #{self.created_at.strftime("%B")}
-      #{self.created_at.day.to_s.rjust(2, "0")},
-      #{self.created_at.year}"
-    end
   end
 end

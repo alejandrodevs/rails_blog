@@ -15,7 +15,7 @@ module RailsBlog
 			@post = Post.published.find_by_permalink(params[:id])
 
       if @post.nil?
-        @post = Post.where(id: params[:id], state: ["drafted", "unpublished"], author_id: current_user.id).first
+        @post = Post.where(permalink: params[:id], state: ["drafted", "unpublished"], author_id: current_user.id).first
 
         if @post
           render 'draft'
@@ -51,7 +51,7 @@ module RailsBlog
       @post.author = current_user
 
       if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to custom_post_path(*@post.url_params), notice: 'Post was successfully created.'
       else
         render action: 'new'
       end
@@ -60,7 +60,7 @@ module RailsBlog
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
-        redirect_to @post, notice: 'Post was successfully updated.'
+        redirect_to custom_post_path(*@post.url_params), notice: 'Post was successfully updated.'
       else
         render action: 'edit'
       end
