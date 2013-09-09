@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet', '~> 3.0.0'
   s.add_dependency 'rouge', '~> 0.4.0'
   s.add_dependency 'aasm', '~> 3.0.22'
+  s.add_dependency 'social-share-button', '~> 0.1.4'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails', '~> 2.14.0'

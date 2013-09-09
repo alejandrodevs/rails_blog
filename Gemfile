@@ -54,6 +54,7 @@ gem 'gravatar_image_tag'
 gem 'redcarpet'
 gem 'rouge'
 gem 'aasm'
+gem 'social-share-button'
 
 group :development, :test do
   gem 'rspec-rails'
