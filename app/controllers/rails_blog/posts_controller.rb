@@ -4,7 +4,7 @@ module RailsBlog
   class PostsController < ApplicationController
     before_action :set_post, only: [:edit, :update, :destroy]
     before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-    before_filter :valid_user!, :only => [:edit, :update]
+    before_filter :valid_user!, :only => [:edit, :update, :destroy]
 
     # GET /posts
     def index
@@ -18,12 +18,21 @@ module RailsBlog
       # This shit needs to be refactored. :(
       if @post.nil?
         redirect_to root_path
-      elsif @post.drafted? && current_user && current_user == @post.author
-        @post.unpublish! if params[:state] == "unpublish"
-      elsif !current_user || !(@post.published? || @post.drafted? || @post.unpublished?)
-        redirect_to root_path
-      elsif !@post.published? && current_user && current_user != @post.author
-        redirect_to root_path
+      else
+        if current_user == @post.author
+          @post.unpublish! if params[:state] == "unpublish" && @post.drafted?
+
+          case @post.state
+          when "drafted"
+            flash[:notice] = "Edit your post and publish it!."
+          when "unpublished"
+            flash[:notice] = "Your post needs to be authorized by an admin user."
+          when "rejected"
+            flash[:warning] = "Your post was rejected by an admin user."
+          end
+        else
+          redirect_to root_path if !@post.published?
+        end
       end
     end
 
