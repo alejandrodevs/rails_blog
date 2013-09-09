@@ -2,6 +2,7 @@ require_dependency "rails_blog/application_controller"
 
 module RailsBlog
   class ProfileController < ApplicationController
+    before_filter :authenticate_user!, :only => [:index, :update]
     before_action :set_current_user, only: [:index, :update]
 
     def index
@@ -27,11 +28,8 @@ module RailsBlog
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def user_params
-        if params[:user]
-          params.require(:user).permit(:name)
-        else
-          params.require(:admin).permit(:name)
-        end
+        param_key = params[:user] ? :user : :admin
+        params.require(param_key).permit(:name)
       end
   end
 end

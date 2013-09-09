@@ -2,8 +2,9 @@ require_dependency "rails_blog/application_controller"
 
 module RailsBlog
   class PostsController < ApplicationController
-    before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
     before_action :set_post, only: [:edit, :update, :destroy]
+    before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+    before_filter :valid_user!, :only => [:edit, :update]
 
     # GET /posts
     def index
@@ -12,26 +13,16 @@ module RailsBlog
 
     # GET /yyyy/mm/dd/post-name
     def show
-			@post = Post.published.find_by_permalink(params[:id])
+			@post = Post.find_by_permalink(params[:id])
 
+      # This shit needs to be refactored. :(
       if @post.nil?
-        @post = Post.where(permalink: params[:id], state: ["drafted", "unpublished"], author_id: current_user.id).first
-
-        if @post
-          render 'draft'
-        else
-          redirect_to root_path
-        end
-      end
-    end
-
-    def unpublish
-      @post = Post.where(id: params[:id], state: "drafted", author_id: current_user.id).first
-
-      if @post
-        @post.unpublish!
-        render 'draft'
-      else
+        redirect_to root_path
+      elsif @post.drafted? && current_user && current_user == @post.author
+        @post.unpublish! if params[:state] == "unpublish"
+      elsif !current_user || !(@post.published? || @post.drafted? || @post.unpublished?)
+        redirect_to root_path
+      elsif !@post.published? && current_user && current_user != @post.author
         redirect_to root_path
       end
     end
@@ -76,6 +67,11 @@ module RailsBlog
       # Use callbacks to share common setup or constraints between actions.
       def set_post
         @post = Post.find(params[:id])
+      end
+
+      # Only allow to access if current user is the post author.
+      def valid_user!
+        redirect_to root_path if @post.author != current_user
       end
 
       # Only allow a trusted parameter "white list" through.

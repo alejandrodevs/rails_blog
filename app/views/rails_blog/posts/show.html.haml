@@ -1,4 +1,5 @@
 = render @post
-.row-fluid
-  .social-networks.pull-right
-    = social_share_button_tag(@post.title)
+- if @post.published?
+  .row-fluid
+    .social-networks.pull-right
+      = social_share_button_tag(@post.title)
