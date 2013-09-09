@@ -30,6 +30,12 @@ div {
 
 a {
   color: #990000;
+  &:visited {
+    color: #990000;
+  }
+  &:hover {
+    color: #990000;
+  }
 }
 
 #notice {

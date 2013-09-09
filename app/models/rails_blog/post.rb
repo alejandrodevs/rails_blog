@@ -4,6 +4,7 @@ module RailsBlog
 
     searchable do
       text :title, :body
+      string :state
     end
 
     belongs_to :author, class_name: "User"
