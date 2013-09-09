@@ -13,8 +13,8 @@
       .row-fluid
         .span9
           .general_container
-            = render :partial => "layouts/rails_blog/administration/application/admin_menu"
             = render_flash_messages
+            = render :partial => "layouts/rails_blog/administration/application/admin_menu"
             = yield
         .span3
           = render :partial => "layouts/rails_blog/application/sidebar"
