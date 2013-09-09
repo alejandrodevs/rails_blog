@@ -14,9 +14,14 @@ module RailsBlog
     default_scope -> { order("created_at DESC") }
 
     aasm :column => :state do
-      state :unpublished, :initial => true
+      state :drafted, :initial => true
+      state :unpublished
       state :published
       state :rejected
+
+      event :unpublish do
+        transitions :from => :drafted, :to => :unpublished
+      end
 
       event :publish, :after => :set_published_date do
         transitions :from => :unpublished, :to => :published
@@ -65,6 +70,13 @@ module RailsBlog
       #{self.published_at.strftime("%B")}
       #{self.published_at.day.to_s.rjust(2, "0")},
       #{self.published_at.year}"
+    end
+
+    def created_at_description
+      ", posted on
+      #{self.created_at.strftime("%B")}
+      #{self.created_at.day.to_s.rjust(2, "0")},
+      #{self.created_at.year}"
     end
   end
 end

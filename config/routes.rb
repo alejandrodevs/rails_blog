@@ -6,6 +6,7 @@ RailsBlog::Engine.routes.draw do
 
   match "archive" => "archives#index", via: :get, as: "archive"
   match "search"  => "searches#index", via: :get, as: "search_posts"
+	match "/posts/:id/unpublish" => "posts#unpublish", via: "post", as: 'post_unpublish'
 
   resources :posts
   resources :users, only: [:show]

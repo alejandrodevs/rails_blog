@@ -13,6 +13,27 @@ module RailsBlog
     # GET /yyyy/mm/dd/post-name
     def show
 			@post = Post.published.find_by_permalink(params[:id])
+
+      if @post.nil?
+        @post = Post.where(id: params[:id], state: ["drafted", "unpublished"], author_id: current_user.id).first
+
+        if @post
+          render 'draft'
+        else
+          redirect_to root_path
+        end
+      end
+    end
+
+    def unpublish
+      @post = Post.where(id: params[:id], state: "drafted", author_id: current_user.id).first
+
+      if @post
+        @post.unpublish!
+        render 'draft'
+      else
+        redirect_to root_path
+      end
     end
 
     # GET /posts/new
@@ -30,7 +51,7 @@ module RailsBlog
       @post.author = current_user
 
       if @post.save
-        redirect_to custom_post_path(*@post.url_params), notice: 'Post was successfully created.'
+        redirect_to @post, notice: 'Post was successfully created.'
       else
         render action: 'new'
       end

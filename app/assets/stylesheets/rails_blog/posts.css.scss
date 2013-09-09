@@ -43,7 +43,7 @@
   }
 }
 
-form#new_post {
+form#new_post, form.edit_post {
   input[type='text'], textarea {
     width: 100%;
   }

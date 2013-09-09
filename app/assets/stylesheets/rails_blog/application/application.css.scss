@@ -17,7 +17,14 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 
 .btn {
-  height: 42px;
+  height: 45px;
+}
+
+a.btn {
+  font-size: 15.5px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 0px !important;
+  height: 21px !important;
 }
 
 input[type="submit"].btn-large {
