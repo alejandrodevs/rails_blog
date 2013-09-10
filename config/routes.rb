@@ -18,7 +18,7 @@ RailsBlog::Engine.routes.draw do
 
   put "profile/update"
   match "/profile" => "profile#index", :as => :profile, :via => :get
-	match "/:year/:month/:day/:id(.:format)" => "posts#show", via: "get", as: 'custom_post'
+  match "/:year/:month/:day/:id(.:format)" => "posts#show", via: "get", as: 'custom_post'
 
   root "posts#index"
 

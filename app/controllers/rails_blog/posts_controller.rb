@@ -13,7 +13,7 @@ module RailsBlog
 
     # GET /yyyy/mm/dd/post-name
     def show
-			@post = Post.find_by_permalink(params[:id])
+      @post = Post.find_by_permalink(params[:id])
 
       # This shit needs to be refactored. :(
       if @post.nil?
