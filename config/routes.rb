@@ -9,12 +9,10 @@ RailsBlog::Engine.routes.draw do
 
   resources :posts
   resources :users, only: [:show]
-  resources :admins, controller: "users", only: [:show]
 
   namespace :administration do
     resources :posts
-	  match "/posts/state/:state" => "posts#index", via: "get", as: 'posts_by_state'
-	  match "/posts/:id/:state" => "posts#show", via: "get", as: 'posts_action'
+    resources :users
     root to: "posts#index"
   end
 

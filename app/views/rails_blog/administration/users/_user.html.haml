@@ -1,0 +1,10 @@
+.administration
+  .user-wrapper
+    .row-fluid
+      .span2
+        = gravatar_image_tag(user.email, :alt => user.name, :class => 'img-circle img-author', :gravatar => { :size => 60 })
+      .span10
+        %h3.user-name
+          = link_to user.name, administration_user_path(user)
+        %p.user-email
+          = user.email

@@ -6,7 +6,7 @@
       %h4.post-title
         = link_to post.title, custom_post_path(*post.url_params)
       %p.post-info
-        = link_to post.author.name, post.author
+        = link_to post.author.name, user_path(post.author)
         = post.description
     .post-content
       = preserve RailsBlog::Markdown.render(post.search_description).html_safe

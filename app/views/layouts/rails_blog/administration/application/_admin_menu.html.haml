@@ -1,9 +1,11 @@
 .admin-menu.clearfix
   .admin-menu-item
-    = link_to 'Drafted posts', administration_posts_by_state_path(state: "drafted")
+    = link_to 'Drafted posts', administration_posts_path(state: "drafted")
   .admin-menu-item
-    = link_to 'Unpublished posts', administration_posts_by_state_path(state: "unpublished")
+    = link_to 'Unpublished posts', administration_posts_path(state: "unpublished")
   .admin-menu-item
-    = link_to 'Published posts', administration_posts_by_state_path(state: "published")
+    = link_to 'Published posts', administration_posts_path(state: "published")
   .admin-menu-item
-    = link_to 'Rejected posts', administration_posts_by_state_path(state: "rejected")
+    = link_to 'Rejected posts', administration_posts_path(state: "rejected")
+  .admin-menu-item
+    = link_to 'Users', administration_users_path

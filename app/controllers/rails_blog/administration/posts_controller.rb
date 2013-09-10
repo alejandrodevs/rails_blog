@@ -8,11 +8,8 @@ module RailsBlog
 
       # GET /posts
       def index
-        if params[:state]
-          @posts = Post.where(state: params[:state]).paginate(:page => params[:page], :per_page => 10)
-        else
-          @posts = Post.drafted.paginate(:page => params[:page], :per_page => 10)
-        end
+        params[:state] ||= "drafted"
+        @posts = Post.where(state: params[:state]).paginate(:page => params[:page], :per_page => 10)
       end
 
       # GET /posts/1

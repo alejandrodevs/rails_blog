@@ -3,7 +3,7 @@
     = @user.name
     %small profile
 
-  = form_for @user, :url => profile_update_path, :method => :put do |f|
+  = form_for @user, :as => :user, :url => profile_update_path, :method => :put do |f|
     .wrapper-user-photo
       = link_to gravatar_image_tag(current_user.email, :alt => current_user.name, :class => 'img-polaroid', :gravatar => { :size => 150 }), "http://www.gravatar.com", id: 'gravatar_link', target: "blank"
 

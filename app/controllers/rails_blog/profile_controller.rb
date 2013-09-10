@@ -28,8 +28,7 @@ module RailsBlog
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def user_params
-        param_key = params[:user] ? :user : :admin
-        params.require(param_key).permit(:name)
+        params.require(:user).permit(:name)
       end
   end
 end

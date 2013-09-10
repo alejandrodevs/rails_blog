@@ -1,0 +1,25 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.administration {
+  .user-wrapper {
+    margin-bottom: 15px;
+
+    .user-name {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      line-height: 30px;
+
+      a {
+        color: #333333;
+      }
+    }
+
+    .user-email {
+      font-size: 17px;
+      font-style: italic;
+      color: #b3b3b1;
+    }
+  }
+}
