@@ -9,3 +9,4 @@
   .actions
     = link_to "Edit post", edit_post_path(@post), :class => "btn btn-inverse btn-large"
     = link_to "Publish post", custom_post_path(*@post.url_params, state: "unpublish"), :class => "btn btn-inverse btn-large"
+    = link_to "Remove post", post_path(@post), :class => "btn btn-danger btn-large", method: :delete, :confirm => 'Are you sure?'
