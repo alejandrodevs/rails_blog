@@ -4,6 +4,7 @@ module RailsBlog
   module Administration
     class UsersController < ApplicationController
       before_action :set_user, only: [:show, :edit, :update, :destroy]
+      before_filter :valid_user!, :only => [:edit, :update, :destroy]
 
       # GET /users
       def index
@@ -53,6 +54,11 @@ module RailsBlog
         # Use callbacks to share common setup or constraints between actions.
         def set_user
           @user = User.find(params[:id])
+        end
+
+        # Only allow to access if user is not an admin.
+        def valid_user!
+          redirect_to administration_users_path if @user.admin?
         end
 
         # Only allow a trusted parameter "white list" through.

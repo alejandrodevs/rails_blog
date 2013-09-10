@@ -9,5 +9,6 @@
         %p.user-email
           = user.email
       .user-actions.span2
-        = link_to "Edit", edit_administration_user_path(user)
-        = link_to "Destroy", administration_user_path(user), method: :delete, :confirm => 'Are you sure?'
+        - if !user.admin?
+          = link_to "Edit", edit_administration_user_path(user)
+          = link_to "Destroy", administration_user_path(user), method: :delete, :confirm => 'Are you sure?'

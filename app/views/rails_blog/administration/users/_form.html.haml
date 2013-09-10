@@ -1,18 +1,24 @@
 = form_for [:administration, @user], as: :user do |f|
-  .control-label
-    = f.label :name
-    .controls
-      = f.text_field :name, :class => "input-xxlarge"
+  .control-group
+    .control-label
+      = f.label :name
+      .controls
+        = f.text_field :name, :class => "input-xxlarge"
+        = render_errors(@user, :name)
 
-  .control-label
-    = f.label :email
-    .controls
-      = f.email_field :email, :class => "input-xlarge"
+  .control-group
+    .control-label
+      = f.label :email
+      .controls
+        = f.email_field :email, :class => "input-xlarge"
+        = render_errors(@user, :email)
 
-  .control-label
-    = f.label :password
-    .controls
-      = f.password_field :password, :class => "input-xlarge"
+  .control-group
+    .control-label
+      = f.label :password
+      .controls
+        = f.password_field :password, :class => "input-xlarge"
+        = render_errors(@user, :password)
 
   .actions
     = f.submit 'Save user', :class => "btn btn-inverse btn-large"

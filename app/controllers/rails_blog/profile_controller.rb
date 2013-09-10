@@ -14,6 +14,7 @@ module RailsBlog
           format.html { redirect_to profile_path, notice: 'Your profile was successfully updated.' }
           format.json { head :no_content }
         else
+          @user.reload
           format.html { render action: 'index' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end

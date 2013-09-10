@@ -1,13 +1,17 @@
 = form_for @post do |f|
-  .control-label
-    = f.label :title
-    .controls
-      = f.text_field :title, :class => "input-xxlarge"
+  .control-group
+    .control-label
+      = f.label :title
+      .controls
+        = f.text_field :title, :class => "input-xxlarge"
+        = render_errors(@post, :title)
 
-  .control-label
-    = f.label :body
-    .controls
-      = f.text_area :body, :class => "input-xxlarge", rows: 15
+  .control-group
+    .control-label
+      = f.label :body
+      .controls
+        = f.text_area :body, :class => "input-xxlarge", rows: 15
+        = render_errors(@post, :body)
 
   .actions
     = f.submit "Save post", :class => "btn btn-inverse btn-large"

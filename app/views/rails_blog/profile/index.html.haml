@@ -7,10 +7,12 @@
     .wrapper-user-photo
       = link_to gravatar_image_tag(current_user.email, :alt => current_user.name, :class => 'img-polaroid', :gravatar => { :size => 150 }), "http://www.gravatar.com", id: 'gravatar_link', target: "blank"
 
-    .control-label
-      = f.label :name
-      .controls
-        = f.text_field :name, :class => "input-xxlarge"
+    .control-group
+      .control-label
+        = f.label :name
+        .controls
+          = f.text_field :name, :class => "input-xxlarge"
+          = render_errors(@user, :name)
 
     .actions
       = f.submit "Save changes", :class => "btn btn-inverse btn-large"

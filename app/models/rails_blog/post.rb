@@ -9,6 +9,8 @@ module RailsBlog
 
     belongs_to :author, class_name: "User"
 
+    validates_presence_of :title, :body
+
     before_save :set_permalink
     after_save :sunspot_commit
 
