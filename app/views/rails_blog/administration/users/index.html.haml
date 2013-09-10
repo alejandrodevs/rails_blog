@@ -1,2 +1,5 @@
+.available-options.clearfix
+  .available-option= link_to "Add user", new_administration_user_path
+
 = render :partial => 'user', :collection => @users
 = will_paginate @users

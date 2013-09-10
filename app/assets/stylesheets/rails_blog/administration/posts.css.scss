@@ -5,10 +5,10 @@
 .administration {
   .post-wrapper {
     margin-bottom: 15px;
-    
+
     .post-wrapper-upper {
       margin-bottom: 0px;
-      
+
       .post-title {
         margin-top: 0px;
         margin-bottom: 0px;
@@ -49,23 +49,9 @@
   .post-wrapper-show {
     margin-bottom: 50px;
 
-    .posts-available-states {
-      margin: -20px 0px 20px;
-      background-color: #666;
-
-      .post-available-state {
-        padding: 6px 10px;
-        float: left;
-
-        a {
-          color: #EEE;
-        }
-      }  
-    }
-    
     .post-wrapper-upper {
       margin-bottom: 15px;
-      
+
       .post-title {
         margin-bottom: 2px;
 
@@ -106,4 +92,18 @@
   color: #b3b3b1;
   font-size: 17px;
   font-style: italic;
+}
+
+.available-options {
+  margin: -20px 0px 20px;
+  background-color: #666;
+
+  .available-option {
+    padding: 6px 10px;
+    float: left;
+
+    a {
+      color: #EEE;
+    }
+  }
 }

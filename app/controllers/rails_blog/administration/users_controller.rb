@@ -7,7 +7,7 @@ module RailsBlog
 
       # GET /users
       def index
-        @users = User.paginate(:page => params[:page], :per_page => 10)
+        @users = User.paginate(:page => params[:page], :per_page => 8)
       end
 
       # GET /users/1
@@ -28,7 +28,7 @@ module RailsBlog
         @user = User.new(user_params)
 
         if @user.save
-          redirect_to @user, notice: 'User was successfully created.'
+          redirect_to administration_user_path(@user), notice: 'User was successfully created.'
         else
           render action: 'new'
         end
@@ -37,7 +37,7 @@ module RailsBlog
       # PATCH/PUT /users/1
       def update
         if @user.update(user_params)
-          redirect_to @user, notice: 'User was successfully updated.'
+          redirect_to administration_user_path(@user), notice: 'User was successfully updated.'
         else
           render action: 'edit'
         end
@@ -46,7 +46,7 @@ module RailsBlog
       # DELETE /users/1
       def destroy
         @user.destroy
-        redirect_to users_url, notice: 'User was successfully destroyed.'
+        redirect_to administration_users_path, notice: 'User was successfully destroyed.'
       end
 
       private
@@ -57,7 +57,7 @@ module RailsBlog
 
         # Only allow a trusted parameter "white list" through.
         def user_params
-          params.require(:user).permit(:name)
+          params.require(:user).permit(:name, :email, :password)
         end
 
     end

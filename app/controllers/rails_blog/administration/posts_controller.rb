@@ -9,7 +9,7 @@ module RailsBlog
       # GET /posts
       def index
         params[:state] ||= "drafted"
-        @posts = Post.where(state: params[:state]).paginate(:page => params[:page], :per_page => 10)
+        @posts = Post.where(state: params[:state]).paginate(:page => params[:page], :per_page => 8)
       end
 
       # GET /posts/1

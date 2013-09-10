@@ -3,8 +3,11 @@
     .row-fluid
       .span2
         = gravatar_image_tag(user.email, :alt => user.name, :class => 'img-circle img-author', :gravatar => { :size => 60 })
-      .span10
+      .span8
         %h3.user-name
           = link_to user.name, administration_user_path(user)
         %p.user-email
           = user.email
+      .user-actions.span2
+        = link_to "Edit", edit_administration_user_path(user)
+        = link_to "Destroy", administration_user_path(user), method: :delete, :confirm => 'Are you sure?'

@@ -1,9 +1,9 @@
 .administration
   .post-wrapper-show
     - if @post.aasm_events_for_current_state.present?
-      .posts-available-states.clearfix
+      .available-options.clearfix
         - @post.aasm_events_for_current_state.each do |state|
-          .post-available-state= link_to state.to_s.capitalize, administration_post_path(state: state)
+          .available-option= link_to state.to_s.capitalize, administration_post_path(state: state)
     .row-fluid.post-wrapper-upper
       .span9
         %h2.post-title

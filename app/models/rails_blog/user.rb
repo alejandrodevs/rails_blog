@@ -6,7 +6,7 @@ module RailsBlog
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
 
-    has_many :posts
+    has_many :posts, dependent: :destroy, foreign_key: :author_id
 
     def admin?
       self.type == "RailsBlog::Admin"
