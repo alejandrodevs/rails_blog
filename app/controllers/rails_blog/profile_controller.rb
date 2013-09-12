@@ -10,11 +10,10 @@ module RailsBlog
 
     def update
       respond_to do |format|
-        if @user.update(user_params)
+        if @user.update_with_password(user_params)
           format.html { redirect_to profile_path, notice: 'Your profile was successfully updated.' }
           format.json { head :no_content }
         else
-          @user.reload
           format.html { render action: 'index' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
@@ -29,7 +28,8 @@ module RailsBlog
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def user_params
-        params.require(:user).permit(:name)
+        params.require(:user).permit(:name, :email, :password, :current_password)
       end
+
   end
 end
