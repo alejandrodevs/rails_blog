@@ -1,0 +1,58 @@
+.wrapper-profile
+  %h3
+    = @user.name
+    %small profile
+
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :method => :put) do |f|
+    .wrapper-user-photo
+      = link_to gravatar_image_tag(current_user.email, :alt => current_user.name, :class => 'img-polaroid', :gravatar => { :size => 150 }), "http://www.gravatar.com", id: 'gravatar_link', target: "blank"
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div= "Currently waiting confirmation for: #{resource.unconfirmed_email}"
+
+    .control-group
+      .control-label
+        = f.label :name
+        .controls
+          = f.text_field :name, :class => "input-xxlarge"
+          - if resource.errors[:name].present?
+            %span.error= resource.errors[:name].join(", ")
+
+    .control-group
+      .control-label
+        = f.label :email
+        .controls
+          = f.email_field :email, :class => "input-xxlarge"
+          - if resource.errors[:email].present?
+            %span.error= resource.errors[:email].join(", ")
+
+    .control-group
+      .control-label
+        = f.label :password
+        .controls
+          %span.help-block
+            %i= "(leave blank if you don't want to change it)"
+          = f.password_field :password, :class => "input-xlarge"
+          - if resource.errors[:password].present?
+            %span.error= resource.errors[:password].join(", ")
+
+    .control-group
+      .control-label
+        = f.label :password_confirmation
+        .controls
+          = f.password_field :password_confirmation, :class => "input-xlarge"
+          - if resource.errors[:password_confirmation].present?
+            %span.error= resource.errors[:password_confirmation].join(", ")
+
+    .control-group
+      .control-label
+        = f.label :current_password
+        .controls
+          %span.help-block
+            %i= "(we need your current password to confirm your changes)"
+          = f.password_field :current_password, :class => "input-xlarge"
+          - if resource.errors[:current_password].present?
+            %span.error= resource.errors[:current_password].join(", ")
+
+    .actions
+      = f.submit "Save changes", :class => "btn btn-inverse btn-large"
