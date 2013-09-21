@@ -37,6 +37,7 @@ module RailsBlog
 
       # PATCH/PUT /users/1
       def update
+        params[:user].delete(:password) unless params[:user][:password].present?
         if @user.update(user_params)
           redirect_to administration_user_path(@user), notice: 'User was successfully updated.'
         else
