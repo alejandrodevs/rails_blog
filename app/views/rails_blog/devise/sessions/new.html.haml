@@ -3,7 +3,7 @@
 
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .controls
-      = f.email_field :email, :placeholder => "Email..."
+      = f.email_field :email, :placeholder => "Email...", autofocus: true
 
     .controls
       = f.password_field :password, :placeholder => "Password..."
