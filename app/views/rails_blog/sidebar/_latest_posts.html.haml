@@ -1,0 +1,8 @@
+.latest-posts-wrapper.sidebar-widget
+  %h4 Latest posts
+  %ul.latest-posts-list
+    - RailsBlog::Post.published.limit(8).each do |post|
+      %li
+        = link_to post.title, custom_post_path(*post.url_params)
+  .offset1
+    = link_to "All our posts ...", archive_path
