@@ -22,10 +22,6 @@ Run this generator:
 
     rails generate rails_blog:install
 
-And this other generator:
-
-    rails generate rails_blog:sidebar:views
-
 Copy engine migrations
 
     rake rails_blog:install:migrations
@@ -42,4 +38,10 @@ And in your routes.rb file add this...
 
     mount RailsBlog::Engine => '/blog'
 
-Enjoy it.
+## Customize sidebar views
+
+Run this generator and edit the files generated:
+
+    rails generate rails_blog:sidebar:views
+
+## Enjoy it.
