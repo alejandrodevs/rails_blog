@@ -46,21 +46,16 @@ Run this generator and edit the generated files:
 
 ## Adding sidebar views
 
-Add the sidebar views that you want and configure them in the rails_blog.rb initialize file.
+Add all the sidebar views that you want to show in your app/views/rails_blog/sidebar folder and configure them in the rails_blog.rb initialize file.
 Example...
 
-Add the _example.html.erb file in app/views/rails_blog/sidebar folder in your application:
-
-    # _example.html.erb file
+Add the _example.html.erb partial view in your app/views/rails_blog/sidebar folder:
 
     <h1>This is a sidebar view example</h1>
 
-Include your new sidebar view in the rails_blog initializer file. Example...
+Include your new sidebar view in the rails_blog initializer file:
 
 ```ruby
-config.siderbar_widgets.add :search, order: 1
-config.siderbar_widgets.add :about_us, order: 2
-config.siderbar_widgets.add :latest_posts, order: 3
 config.siderbar_widgets.add :example, order: 4  # <= Add your new sidebar view.
 ```
 
