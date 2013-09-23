@@ -18,25 +18,35 @@ Or install it yourself with:
 
 ## Getting started
 
+Add this line to your application's Gemfile and execute bundle install:
+
+    gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+
+Include in your Rakefile this line:
+
+    load 'sunspot/solr/tasks.rb'
+
 Run this generator:
 
     rails generate rails_blog:install
 
-Copy engine migrations
+Copy engine migrations:
 
     rake rails_blog:install:migrations
 
-Run them
+Run them:
 
     rake db:migrate
 
-Add this line to your application's Gemfile
+Start solr server:
 
-    gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+    rake sunspot:solr:start
 
-And in your routes.rb file add this...
+And in your routes.rb file add this line:
 
     mount RailsBlog::Engine => '/blog'
+
+**Enjoy it!**
 
 ## Customize sidebar views
 
@@ -46,14 +56,10 @@ Run this generator and edit the generated files:
 
 ## Adding sidebar views
 
-Add all the sidebar views that you want to show in your app/views/rails_blog/sidebar folder and configure them in the rails_blog.rb initialize file.
+Add in your app/views/rails_blog/sidebar folder the sidebar views that you want to show and configure them in the rails_blog.rb initializer file.
 Example...
 
-Add the _example.html.erb partial view in your app/views/rails_blog/sidebar folder:
-
-    <h1>This is a sidebar view example</h1>
-
-Include your new sidebar view in the rails_blog initializer file:
+Add the '_example.html.erb' partial view in your app/views/rails_blog/sidebar folder and include the sidebar view in the rails_blog initializer file:
 
 ```ruby
 config.siderbar_widgets.add :example, order: 4  # <= Add your new sidebar view.
@@ -69,4 +75,12 @@ Run this generator:
 
     rails generate rails_blog:comments:views
 
-## Enjoy it.
+Implement the comments in that file. That view will be rendered in the post show view.
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
