@@ -22,10 +22,6 @@ Add this line to your application's Gemfile and execute bundle install:
 
     gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 
-Include in your Rakefile this line:
-
-    load 'sunspot/solr/tasks.rb'
-
 Run this generator:
 
     rails generate rails_blog:install
