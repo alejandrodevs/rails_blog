@@ -58,7 +58,7 @@ Run this generator and edit the generated files:
 
 The sidebar views should be in your `app/views/rails_blog/sidebar` folder and they should be configured in the rails_blog.rb initializer file.
 
-###### Example
+###### Example...
 
 Create `_example.html.erb` partial view in your `app/views/rails_blog/sidebar` folder.
 
@@ -72,17 +72,25 @@ Configure the sidebar view in the rails_blog.rb initializer file:
 config.siderbar_widgets.add :example, order: 4  # <= Add your new sidebar view.
 ```
 
-**NOTE:** The order option refers to the order that the sidebar views will be displayed.
+**Note:** The order option refers to the order that the sidebar views will be displayed.
 
 Restart the server and it's done.
 
 ## Adding post comments
 
-Run this generator:
+Run this generator and implement post comments in that file:
 
     rails generate rails_blog:comments:views
 
-Implement post comments in that file. That view will be rendered in the post show view.
+**Note:** That view will be rendered in the post show view.
+
+## Sharing posts
+
+Run this generator and add social sharing implementation in that file:
+
+    rails generate rails_blog:sharing:views
+
+**Note:** That view will be rendered in the post show view.
 
 ## Contributing
 

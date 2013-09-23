@@ -10,7 +10,6 @@ require "gravatar_image_tag"
 require "redcarpet"
 require "rouge"
 require "aasm"
-require "social-share-button"
 
 module RailsBlog
   extend Setup
