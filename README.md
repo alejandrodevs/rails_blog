@@ -42,35 +42,13 @@ And in your routes.rb file add this line:
 
     mount RailsBlog::Engine => '/blog'
 
-**Enjoy it!**
-
-## Customize sidebar views
-
-Run this generator and edit the generated files:
-
-    rails generate rails_blog:sidebar:views
-
-## Adding sidebar views
-
-The sidebar views should be in your `app/views/rails_blog/sidebar` folder and they should be configured in the rails_blog.rb initializer file.
-
-###### Example...
-
-Create `_example.html.erb` partial view in your `app/views/rails_blog/sidebar` folder.
-
-```html
-<h1>This is a sidebar view example</h1>
-``` 
-
-Configure the sidebar view in the rails_blog.rb initializer file:
+Create an admin user in your console:
 
 ```ruby
-config.siderbar_widgets.add :example, order: 4  # <= Add your new sidebar view.
+RailsBlog::Admin.create(name: "your name", email: "your email", password: "your password")
 ```
 
-**Note:** The order option refers to the order that the sidebar views will be displayed.
-
-Restart the server and it's done.
+**Enjoy it!**
 
 ## Adding post comments
 
@@ -87,6 +65,34 @@ Run this generator and add social sharing implementation in that file:
     rails generate rails_blog:sharing:views
 
 **Note:** That view will be rendered in the post show view.
+
+## Overwriting default sidebar views
+
+Run this generator and edit the files:
+
+    rails generate rails_blog:sidebar:views
+
+## Adding sidebar views
+
+The sidebar views should be in your `app/views/rails_blog/sidebar` folder and they should be configured in the `rails_blog.rb` initializer file.
+
+###### Example...
+
+Create `_example.html.erb` partial view in your `app/views/rails_blog/sidebar` folder.
+
+```html
+<h1>This is a sidebar view example</h1>
+``` 
+
+Configure the sidebar view in the `rails_blog.rb` initializer file:
+
+```ruby
+config.siderbar_widgets.add :example, order: 4  # <= Add your new sidebar view.
+```
+
+**Note:** The order option refers to the order that the sidebar views will be displayed.
+
+Restart the server and it's done.
 
 ## Contributing
 
