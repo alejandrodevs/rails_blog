@@ -45,7 +45,7 @@ And in your routes.rb file add this line:
 Create an admin user in your console:
 
 ```ruby
-RailsBlog::Admin.create(name: "your name", email: "your email", password: "your password")
+RailsBlog::Admin.create(name: "name", email: "email", password: "password")
 ```
 
 **Enjoy it!**
@@ -82,7 +82,7 @@ Create `_example.html.erb` partial view in your `app/views/rails_blog/sidebar` f
 
 ```html
 <h1>This is a sidebar view example</h1>
-``` 
+```
 
 Configure the sidebar view in the `rails_blog.rb` initializer file:
 
