@@ -2,6 +2,8 @@ require 'spec_helper'
 
 module RailsBlog
   describe Post do
+    let!(:subject){ described_class.new(title: "title", body: "body") }
+
     it "responds to searchable" do
       expect(described_class).to respond_to(:searchable?)
 		end
@@ -31,7 +33,7 @@ module RailsBlog
       it "returns an array with custom post url params" do
         subject.permalink = "some-title"
 				subject.created_at = Time.parse("2013-07-23")
-				expect(subject.url_params).to eql([2013, 07, 23, "some-title"])
+				expect(subject.url_params).to eql([2013, "07", "23", "some-title"])
 			end
 		end
 
