@@ -3,15 +3,18 @@
     .control-label
       = f.label :title
       .controls
-        = f.text_field :title, :class => "input-xxlarge"
+        = f.text_field :title, :class => "input-xxlarge", :placeholder => "What is the post title?"
         = render_errors(@post, :title)
 
   .control-group
     .control-label
       = f.label :body
       .controls
+        %p
+          %i= "Markdown is supported to customize your posts. Information about it"
+          = link_to "here.", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", target: "_blank"
         = f.text_area :body, :class => "input-xxlarge", rows: 15
         = render_errors(@post, :body)
 
   .actions
-    = f.submit "Save post", :class => "btn btn-inverse btn-large"
+    = f.submit "Preview", :class => "btn btn-inverse btn-large"
