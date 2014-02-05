@@ -12,10 +12,6 @@ And then execute:
 
     $ bundle install
 
-Or install it yourself with:
-
-    $ gem install mass_insert
-
 ## Getting started
 
 Add this line to your application's Gemfile and execute bundle install:
